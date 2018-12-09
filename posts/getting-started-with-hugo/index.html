@@ -397,8 +397,15 @@ body {
       </div>
 
       <div class="post-content">
-        <p>I&rsquo;ve been meaning to get going with a technical blog for months, but as it
-turned out, 2018 has been quite a busy year. I&rsquo;d had a little flirtation with
+        
+
+<p>I&rsquo;ve been meaning to get going with a technical blog for months, but as it
+turned out, 2018 has been quite a busy year: finally finished my PhD, moved
+countries, found a new job, a whole mess of personal stuff. In any event, I&rsquo;m
+busy enough now that if I don&rsquo;t start keeping a technical blog it&rsquo;ll be a real
+mission to keep on top of what I&rsquo;m learning. So, blogging it is.</p>
+
+<p>Anyway, I&rsquo;d had a little flirtation with
 the <a href="https://jekyllrb.com/">Jekyll</a> site generator and <a href="https://pages.github.com/">GitHub
 Pages</a> last year, but between being a novice to
 Ruby, someone who last tried making a website around twenty years ago, and
@@ -409,6 +416,48 @@ set-up.</p>
 <p>This time around I looked a bit further about, and I ended up farting about
 with  <a href="https://gohugo.io/">Hugo</a> which is, at least, implemented in Go,
 a language I have slightly more familiarity with. So that&rsquo;s nice.</p>
+
+<p>In the discussion that follows I assume very little knowledge, because that&rsquo;s
+where I started from.</p>
+
+<h1 id="the-big-picture">the big picture</h1>
+
+<p>Hugo generates static websites by parsing and transforming simplified markup
+files. The transformed text is injected, along with any asset files (images, PDFs,
+etc.), through a set of templates (layouts, themes, etc.) to produce the final
+site as a structured directory ready for upload to a mundane webserver.</p>
+
+<p>So Hugo &ndash; along with other site generators &ndash; more or less resembles LaTeX for
+websites.  The motivation is the opportunity to build a static site of non-trivial
+size without the hassle and busywork of structuring the project, managing
+linkage, and minimizing the extent to which you have to repeat yourself. Your
+workflow looks a lot similar, in that you can run Hugo to monitor your source
+directory, regenerating and previewing the site locally. If you&rsquo;re managing
+your project with Git (why wouldn&rsquo;t you?) you can always push the output to
+a public server at major commit / review points.</p>
+
+<p>A couple of caveats apply, in that the sources are pulled together from more
+(content, layout and configuration) files than are typical in a LaTeX workflow,
+the output consists of an entire
+static directory rather than a single file, and in general, at first, the
+process can feel a bit more fragile until it starts to click.</p>
+
+<p>But <a href="https://www.markdowntutorial.com">Markdown</a> is nice to work with, and
+makes it nice and easy to commit notes to some kind of temporary record. The
+wealth of freely-available themes is a boon for getting something up and
+online without committing hours to poring over stylesheets.</p>
+
+<h1 id="github-config">github config</h1>
+
+<p>I had some early misfires with setup until I chanced upon <a href="http://whipperstacker.com/2015/11/27/deploying-a-stand-alone-hugo-site-to-github-pages-mapped-to-a-custom-domain/">whipperstacker&rsquo;s
+writeup</a>,
+which I recommend. I&rsquo;m aiming to try and build on this in my own write-up, as
+I found it easy to get confused on a couple of points early on.</p>
+
+<p>On your GitHub account, you&rsquo;ll want to set up <em>two</em> repositories. One of these
+has to be called <code>&lt;username&gt;.github.io</code>. This will hold the<br />
+site <em>generated</em> by Hugo: when you choose to publish updates, this is where the
+files will end up.</p>
 
       </div>
     </div>
